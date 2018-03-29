@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <title>商品列表</title>
+    <style>
+        .goods_box {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .goods_box>div{
+            margin-right: 15px;
+        }
+        .text-box {
+            position: relative;
+            line-height:16px;
+            font-size: 16px;
+            height:47px;
+            overflow: hidden;
+        }
+        .text-box::after{
+            content:"...";
+            font-weight:bold;
+            display: inline-block;
+            width: 15px;
+            height: 16px;
+            background: #fff;
+            position:absolute;
+            bottom:0;
+            right:0;
+            /*padding:0 20px 1px 45px;*/
+        }
+        .warp {
+            width: 100%;
+            padding: 0 5%;
+            margin: 0 auto;
+        }
+        .margin-left {
+            margin-left: 5px;
+        }
+        .anchor {
+            display: inline-block;
+            float: right;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header" style="position: relative" >
+        <h1 class="text-center" ><a  href="/" title="回到首页"  style="
+                    position: absolute;
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    left: 20%;
+                " > <span class="glyphicon glyphicon-home" ></span> </a>商品管理
+        </h1>
+        <a href="/users/logout" style="display: block; position: absolute;top: 0;right: 150px;" >退出登录</a>
+    </div>
+    <div class="container" >
+        <div class="row" >
+            <div class="col-md-6 col-md-offset-1 " >
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="exampleInputName2">商品名搜索：</label>
+                        <input type="text" class="form-control" id="goods_name" placeholder="商品名">
+                    </div>
+                    <button id="search" type="button" class="btn btn-default"><span class="glyphicon glyphicon-search" ></span> 搜索</button>
+                    <a href="/goods" class="btn btn-default" >重置</a>
+                </form>
+            </div>
+            <div class="col-md-3 col-md-offset-1" >
+                <a href="/add_goods" class="btn btn-default" ><span class="glyphicon glyphicon-plus" ></span> 添加商品</a>
+            </div>
+        </div>
+        <div class="warp" >
+            <div class="goods_box" id="box" style="min-height: 240px; width: 100%;" >
+                <!--<div class="thumbnail">-->
+                    <!--<img src="..." alt="...">-->
+                    <!--<div class="caption">-->
+                        <!--<h3>Thumbnail label</h3>-->
+                        <!--<p>...</p>-->
+                        <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <nav aria-label="..." id="page-box" >
+            <div style="text-align: center" >当前页数: <span id="page" >1</span></div>
+            <ul class="pager">
+                <li><a href="javascript:void(0)" id="prev" >上一页</a></li>
+                <li><a href="javascript:void(0)" id="next" >下一页</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+    <script>
+
+    </script>
+    <script src="/javascripts/goods.js" ></script>
+</html>

@@ -1,0 +1,31 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>错误页面</title>
+</head>
+<body>
+    <div style="text-align: center" >
+        <h1><%=content%></h1>
+        <h1 id="time" >3</h1>
+        <p id="url" style="display: none;" ><%=url%></p>
+    </div>
+    <script>
+
+        var timeText = document.getElementById('time')
+        var time = 3
+        var url = document.getElementById('url').innerHTML
+        setInterval( function () {
+            timeText.innerHTML = --time
+            if (time<=1) {
+                window.location.href= url
+            }
+        }, 1000 )
+
+    </script>
+</body>
+</html>

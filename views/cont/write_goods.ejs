@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="javascripts/write_goods.js" ></script>
+    <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <title>修改商品页面-<%=goods.goods_name%></title>
+</head>
+<body>
+    <div class="page-header" style="position: relative" >
+        <h1 class="text-center" ><a  href="/" title="回到首页"  style="
+                        position: absolute;
+                        display: block;
+                        width: 30px;
+                        height: 30px;
+                        left: 20%;
+                    " > <span class="glyphicon glyphicon-home" ></span> </a>商品修改--<%=goods.goods_name%>
+        </h1>
+        <a href="/users/logout" style="display: block; position: absolute;top: 0;right: 150px;" >退出登录</a>
+    </div>
+    <div class="container" >
+        <div style="width: 500px; margin: 0 auto" >
+            <div style="height: 200px; overflow: hidden"  >
+                <img width="300" id="img_" src="<%=goods.goods_img%>" alt="商品图片">
+            </div>
+            <div style="margin-top: 10px" class="form-group">
+                <input type="file" name="goods_img" id="goods_img" >
+            </div>
+            <div class="form-group">
+                <button id="change-btn" type="button" style="margin-top: 10px" class="btn btn-primary" >更换封面</button>
+            </div>
+            <div style="margin-bottom: 50px" >
+                <form method="post" action="/update_goods" >
+                    <div class="form-group">
+                        <label for="goods_name">商品名称</label>
+                        <input type="text" class="form-control" name="goods_name" value="<%=goods.goods_name%>">
+                    </div>
+                    <div class="form-group">
+                        <label for="goods_price">商品价格</label>
+                        <input type="text" class="form-control" name="goods_price" value="<%=goods.goods_price%>">
+                    </div>
+                    <div class="form-group">
+                        <label for="goods_price">商品描述</label>
+                        <textarea class="form-control" name="goods_text" id="goods_text" rows="4"><%=goods.goods_text%></textarea>
+                    </div>
+                    <input type="hidden" name="id" value="<%=goods.id%>" >
+                    <button type="submit" class="btn btn-primary">更改</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="goods_id" ><%=goods.id%></div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <title>商品评论页面</title>
+    <style>
+        .comments-item {
+            margin-top: 10px;
+            overflow: hidden;
+            border-bottom: 1px solid #f2f2f2;
+        }
+        .user-info-box {
+            float: left;
+            width: 160px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .content-box {
+            float: right;
+            width: 630px;
+            height: 150px;
+        }
+        .btn-box {
+            float: right;
+        }
+        .type-box {
+            float: left;
+        }
+        .text-box {
+            padding-top: 10px;
+            height: 80px;
+            overflow: hidden;
+        }
+        .time-box {
+            height: 30px;
+            line-height: 30px;
+        }
+        .btn-box a {
+            display: inline-block;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header" style="position: relative" >
+        <h1 class="text-center" ><a  href="/" title="回到首页"  style="
+                            position: absolute;
+                            display: block;
+                            width: 30px;
+                            height: 30px;
+                            left: 20%;
+                        " > <span class="glyphicon glyphicon-home" ></span> </a>商品评论--<%=goods.goods_name%>
+        </h1>
+        <a href="/users/logout" style="display: block; position: absolute;top: 0;right: 150px;" >退出登录</a>
+    </div>
+    <div id="gid" style="display: none" ><%=goods.id%></div>
+    <div style="width: 800px; margin: 0 auto" >
+        <div style="margin-left: 50px; margin-bottom: 20px" >
+            <button class="btn btn-default" id="show" >显示的评论</button>
+            <button class="btn btn-default " id="hide" >未显示的评论</button>
+        </div>
+        <div id="comments_box" style="min-height: 310px" >
+            <div class="comments-item" >
+                <div class="user-info-box" >
+                    <div>
+                        <img width="80" height="80" src="https://wx.qlogo.cn/mmopen/vi_32/zsDkYWTLSbJ3EYrrGEdBsic3HYyzxLibcLddwF2c5N82VEE4hZ3y8x3NMumJYDUB7QNTCFpHFvevXFVjNmY6ID7A/0" alt="">
+                    </div>
+                    <div style="margin-top: 10px" ><p>车程怡</p></div>
+                </div>
+                <div class="content-box" >
+                    <div style="overflow: hidden" >
+                        <div class="type-box" >
+                            <p>评论是否显示: 是</p>
+                        </div>
+                        <div class="btn-box" >
+                            <button>隐藏评论</button>
+                            <button>显示评论</button>
+                            <button>删除</button>
+                        </div>
+                    </div>
+                    <div class="text-box" >
+                        啦啦啦
+                    </div>
+                    <div class="time-box" >
+                        sads
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav aria-label="..." id="page-box" style="margin-top: 30px; margin-bottom: 50px" >
+        <div style="text-align: center" >当前页数: <span id="page" >1</span></div>
+        <ul class="pager">
+            <li><a href="javascript:void(0)" id="prev" >上一页</a></li>
+            <li><a href="javascript:void(0)" id="next" >下一页</a></li>
+            <li><a href="javascript:void(0)" id="reset" >重置</a></li>
+        </ul>
+    </nav>
+    <script src="/javascripts/goods_comments.js" ></script>
+</body>
+</html>
